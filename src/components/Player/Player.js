@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import useSound from 'use-sound';
 import song1 from '../../assets/tujhe_kitna.mp3'
+// import song2 from '../../assets/tujhe_kitna.mp3'
 import {AiFillPlayCircle,AiFillPauseCircle} from 'react-icons/ai'
 import { BiSkipNext, BiSkipPrevious } from "react-icons/bi";
 import { IconContext } from "react-icons";
@@ -26,6 +27,9 @@ const Player = () => {
             setIsPlaying(true)
         }
     }
+    // const previousButton=()=>{
+    //     console.log('previous button')
+    // }
     useEffect(()=>{
         const sec = duration/1000;
         const min = Math.floor(sec/60);
@@ -54,6 +58,7 @@ const Player = () => {
     return (
         <div className="component">
         <h2>Playing Now</h2>
+        <p>Created by Anisur Rahman</p>
         <img
           className="musicCover"
           src="https://pagalsong.in/uploads//thumbnails/300x300/id3Picture_102009727.jpg"
@@ -63,7 +68,7 @@ const Player = () => {
           <p className="subTitle">Tujhe Kitna</p>
         </div>
         <div>
-          <button className="playButton">
+          <button  className="playButton">
             <IconContext.Provider value={{ size: "3em", color: "#27AE60" }}>
               <BiSkipPrevious />
             </IconContext.Provider>
@@ -108,6 +113,9 @@ const Player = () => {
             sound.seek([e.target.value]);
           }}
         />
+      </div>
+      <div>
+        
       </div>
       </div>
     );
